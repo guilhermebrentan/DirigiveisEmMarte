@@ -92,6 +92,20 @@ namespace apCaminhosMarte
 
         }
 
+        public Cidade EnconctrarCidade(int codCidade, No aux)
+        {
+            if (aux.Conteudo.CodCidade == codCidade)
+                return aux.Conteudo;
+
+            if (aux.Conteudo.CodCidade < codCidade)
+                return EnconctrarCidade(codCidade, aux.Direita);
+
+            if (aux.Conteudo.CodCidade > codCidade)
+                return EnconctrarCidade(codCidade, aux.Esquerda);
+
+            return null;
+        }
+
         public void DesenharArvore(bool primeiraVez, No raiz,
                           int x, int y, double angulo, double incremento,
                           double comprimento, Graphics g)
@@ -117,6 +131,20 @@ namespace apCaminhosMarte
                     new SolidBrush(Color.White), xf - 10, yf + 10);
 
             }
+        }
+
+        public void DesenharCidades(double fatorDeReducaoX, double fatorDeReducaoY, Graphics g, No no)
+        {
+            g.DrawString(no.Conteudo.NomeCidade, new Font("Comic Sans", 10), new SolidBrush(Color.Black), float.Parse(no.Conteudo.CoordX * fatorDeReducaoX + ""), 
+                                                                                                          float.Parse(no.Conteudo.CoordY * fatorDeReducaoY + ""));
+
+            g.FillEllipse(new SolidBrush(Color.Black), new RectangleF(float.Parse(no.Conteudo.CoordX * fatorDeReducaoX - 10 + ""), float.Parse(no.Conteudo.CoordY * fatorDeReducaoY + ""), 10, 10));
+
+            if (no.Direita != null)
+                DesenharCidades(fatorDeReducaoX, fatorDeReducaoY, g, no.Direita);
+
+            if (no.Esquerda != null)
+                DesenharCidades(fatorDeReducaoX, fatorDeReducaoY, g, no.Esquerda);
         }
     }
 }

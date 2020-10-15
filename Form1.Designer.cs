@@ -54,8 +54,8 @@
             this.lsbOrigem = new System.Windows.Forms.ListBox();
             this.pbMapa = new System.Windows.Forms.PictureBox();
             this.tpArvore = new System.Windows.Forms.TabPage();
-            this.openCidades = new System.Windows.Forms.OpenFileDialog();
             this.pnlArvore = new System.Windows.Forms.Panel();
+            this.openCidades = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tpRotas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -267,17 +267,34 @@
             this.lsbDestino.FormattingEnabled = true;
             this.lsbDestino.ItemHeight = 16;
             this.lsbDestino.Items.AddRange(new object[] {
-            "  0 - Acheron          ",
-            "  1 - Arena           ",
-            "  2 - Arrakeen       ",
-            "  3 - Bakhuysen       ",
-            "  4 - Bradbury ",
-            "  5 - Burroughs       ",
-            "  6 - Cairo            "});
-            this.lsbDestino.Location = new System.Drawing.Point(1038, 129);
+            " 0 - Acheron          ",
+            " 1 - Arena           ",
+            " 2 - Arrakeen       ",
+            " 3 - Bakhuysen       ",
+            " 4 - Bradbury ",
+            " 5 - Burroughs       ",
+            " 6 - Cairo",
+            " 7 - Dumont",
+            " 8 - Echus Overlook",
+            " 9 - Esperança       ",
+            "10 - Gondor          ",
+            "11 - Lakefront",
+            "12 - Lowell        ",
+            "13 - Moria",
+            "14 - Nicosia",
+            "15 - Odessa",
+            "16 - Perseverança",
+            "17 - Rowan           ",
+            "18 - Senzeni Na       ",
+            "19 - Sheffield",
+            "20 - Temperança      ",
+            "21 - Tharsis",
+            "22 - Underhill              "});
+            this.lsbDestino.Location = new System.Drawing.Point(1041, 129);
             this.lsbDestino.Name = "lsbDestino";
             this.lsbDestino.Size = new System.Drawing.Size(177, 84);
             this.lsbDestino.TabIndex = 3;
+            this.lsbDestino.SelectedIndexChanged += new System.EventHandler(this.lsbDestino_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -296,17 +313,34 @@
             this.lsbOrigem.FormattingEnabled = true;
             this.lsbOrigem.ItemHeight = 16;
             this.lsbOrigem.Items.AddRange(new object[] {
-            "  0 - Acheron          ",
-            "  1 - Arena           ",
-            "  2 - Arrakeen       ",
-            "  3 - Bakhuysen       ",
-            "  4 - Bradbury ",
-            "  5 - Burroughs       ",
-            "  6 - Cairo            "});
+            " 0 - Acheron          ",
+            " 1 - Arena           ",
+            " 2 - Arrakeen       ",
+            " 3 - Bakhuysen       ",
+            " 4 - Bradbury ",
+            " 5 - Burroughs       ",
+            " 6 - Cairo",
+            " 7 - Dumont",
+            " 8 - Echus Overlook",
+            " 9 - Esperança       ",
+            "10 - Gondor          ",
+            "11 - Lakefront",
+            "12 - Lowell        ",
+            "13 - Moria",
+            "14 - Nicosia",
+            "15 - Odessa",
+            "16 - Perseverança",
+            "17 - Rowan           ",
+            "18 - Senzeni Na       ",
+            "19 - Sheffield",
+            "20 - Temperança      ",
+            "21 - Tharsis",
+            "22 - Underhill              "});
             this.lsbOrigem.Location = new System.Drawing.Point(1038, 25);
             this.lsbOrigem.Name = "lsbOrigem";
             this.lsbOrigem.Size = new System.Drawing.Size(177, 84);
             this.lsbOrigem.TabIndex = 1;
+            this.lsbOrigem.SelectedIndexChanged += new System.EventHandler(this.lsbOrigem_SelectedIndexChanged);
             // 
             // pbMapa
             // 
@@ -320,6 +354,7 @@
             this.pbMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapa.TabIndex = 0;
             this.pbMapa.TabStop = false;
+            this.pbMapa.Paint += new System.Windows.Forms.PaintEventHandler(this.pbMapa_Paint);
             // 
             // tpArvore
             // 
@@ -332,10 +367,6 @@
             this.tpArvore.Text = "Árvore de Cidades";
             this.tpArvore.UseVisualStyleBackColor = true;
             // 
-            // openCidades
-            // 
-            this.openCidades.FileName = "openFileDialog1";
-            // 
             // pnlArvore
             // 
             this.pnlArvore.Location = new System.Drawing.Point(7, 7);
@@ -343,6 +374,10 @@
             this.pnlArvore.Size = new System.Drawing.Size(1305, 545);
             this.pnlArvore.TabIndex = 0;
             this.pnlArvore.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlArvore_Paint);
+            // 
+            // openCidades
+            // 
+            this.openCidades.FileName = "openFileDialog1";
             // 
             // Form1
             // 
